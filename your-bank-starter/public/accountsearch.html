@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search An Account</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+</head>
+<body>
+
+    {{>home}}
+
+    <h1 align="center">Search An Account</h1>
+
+    <div class="container mt-5">
+        <form method="POST" action="/search">
+            <div class="form-group">
+                <label>Enter Account Name Or Currency Type For Lookup</label>
+                <input type="text" name="name" class="form-control" placeholder="E.g. John Smith">
+            </div>
+            <button type="submit" class="btn btn-info">Search</button>
+        </form>
+    </div>
+
+</body>
+</html>

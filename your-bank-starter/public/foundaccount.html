@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Account</title>
+    {{> includes}}
+    <style>
+        ul.pagination li {
+            width: 75px;
+        }
+    </style>
+</head>
+<body>
+
+    {{> home}}
+
+    <div class="container mt-5 col-lg-5 col-sm-9 col-xs" >
+        <h1>Accounts Found:</h1>
+        <table class="table table-hover" data-paging="true" data-paging-limit="3" data-paging-size="20" data-paging-position="center">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Initial Balance</th>
+                <th scope="col">Current Balance</th>
+                <th scope="col">Currency</th>
+                <th scope="col">Transactions Processed</th>
+                <th scope="col">Transactions Failed</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#accFound}}
+            {{#if fraudulentActivity}}
+            <tr class="table-warning">
+            {{else}}
+            <tr>
+            {{/if}}
+                <td scope="row">{{@index}}</td>
+                <td>{{name}}</td>
+                <td>{{initialbalance}}</td>
+                <td>{{currentbalance}}</td>
+                <td>{{currency}}</td>
+                <td>{{transactionsProcessed}}</td>
+                <td>{{transactionsFailed}}</td>
+            </tr>
+            {{/accFound}}
+            </tbody>
+        </table>
+    </div>
+
+</body>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".table").footable({
+            paging: {
+                strings: {
+                    first: "FIRST",
+                    prev: "PREVIOUS",
+                    next: "NEXT",
+                    last: "LAST"
+                }
+            }
+        });
+    });
+</script>
+
+</html>

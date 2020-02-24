@@ -1,0 +1,26 @@
+image: maven:3.5.2-jdk-8
+
+cache:
+  paths:
+    - .m2/repository
+
+stages:
+  - build
+#  - deploy
+
+
+maven_package:
+  stage: build
+  script: mvn package
+  artifacts:
+    paths:
+    - target/bankname-*.jar
+
+# Ignore this for now, we will use it later
+#deploy_cf:
+#  stage: deploy
+#  image: kramos/cloud-foundry-cli
+#  script:
+#    - cf login -a $CF_API -u $CF_USER -p $CF_PASSWORD -o $CF_ORG -s $CF_SPACE
+#    - cf push
+
