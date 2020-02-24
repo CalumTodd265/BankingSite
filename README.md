@@ -1,2 +1,2 @@
 # BankingSite
-Banking Website
+The goal of this project was to pull bank account information from an API, store it in a locally created database and perform transactions on those accounts. The transactions and accounts were also to be shown on a website which was informed with endpoints. One of my responsibilities was creating the local database upon the program's start-up by using SQL with Java methods. Another of my responsibilities was to transfer the information stored in a local JSON ArrayList, which represented database information, to a CSV file. I then had to create an endpoint for this file to be served up to the user.
